@@ -13,3 +13,8 @@ cd /path/to/amp
 ```console
 chmod 755 bin/amp
 ```
+You might want to make the `amp` folder hidden.
+### Optional
+```console
+mv amp .amp
+```
