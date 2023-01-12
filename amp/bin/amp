@@ -1,0 +1,20 @@
+#!/bin/sh
+if [ $1 -z ]
+then
+  printf "AMP: HELP\namp [ -i ] install\n           package name\n"
+elif [ $1 = "-i" ]
+then
+  if [ $2 = "gh" ]
+  then
+    if [ $(basename $PWD) = "bin" ]; then echo "Please do not use amp in this directory."; exit 1; fi
+    GUSER=$3
+    GREPO=$4
+    GBRAN=$5
+    # https://github.com/U/R/archive/refs/heads/B.zip
+    curl -L -o $GREPO-$GBRAN.zip https://github.com/$GUSER/$GREPO/archive/refs/heads/$GBRAN.zip
+    unzip $GREPO-$GBRAN.zip
+    cd $GREPO-$GBRAN
+    printf "\033[0;32m== \033[1;37mSearching for .cpp files... (GNU G++ Required)\033[0m"
+    if [ $(find *.cpp) -z ]; then printf "\033[0;31m== \033[1;37mNo .cpp files found. Stop.\033[0m\n"; else printf "\033[1;31mCaution: \033[1;37mAssuming there is just one .cpp file.\033[0m\n"; g++ -o $GREPO *.cpp; echo "Wait 2s"; sleep 2; printf "\033[0;32m== \033[1;37m Build Successful!\033[0m\n"; fi
+    fi
+fi
