@@ -18,8 +18,9 @@ You might want to make the `amp` folder hidden.
 ```console
 mv amp .amp
 ```
-Executable name in the directory `amp`: `bin/amp`
 ## Syntax
+Executable name in the directory `amp`: `bin/amp`
+
 `bin/amp`: help list
 
 `bin/amp -i gh USER REPO BRANCH`
