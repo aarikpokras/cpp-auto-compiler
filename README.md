@@ -1,6 +1,6 @@
-#  Auto-Compiler
+# C++ Auto-Compiler
 ### aka "amp" - Like a parody of apt
-Uses a shell script and  to automatically build programs from GitHub.
+Uses a shell script and G++ to automatically build programs from GitHub.
 
 ## Usage
 `cd` into the directory in which you have stored amp.
