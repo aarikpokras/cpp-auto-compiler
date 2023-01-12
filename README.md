@@ -1,5 +1,5 @@
 # ![C++ Auto-Compiler](https://img.shields.io/badge/%20-Auto%20Compiler-grey?logo=c%2B%2B&style=for-the-badge)
-### aka "amp" - Like a parody of apt
+### aka "amp" - Like a parody of apt, but doesn't do the same thing
 Uses a shell script and G++ to automatically build programs from GitHub.
 
 ## Usage
