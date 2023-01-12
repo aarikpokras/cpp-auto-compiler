@@ -29,4 +29,6 @@ Sorry about the lengthy args.
 ## Warning
 This is the first version, so there are bound to be mistakes. **If there is more than 1 .cpp file in a directory, there *will* be an error.** (I'm working on it)
 
+amp does **not** compile recursively.
+
 I put an example in the "amp" folder.
