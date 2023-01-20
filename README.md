@@ -27,7 +27,7 @@ Executable name in the directory `amp`: `bin/amp`
 
 Sorry about the lengthy args.
 ## Warning
-This is the first version, so there are bound to be mistakes. **If there is only 1 .cpp file in a directory, it'll compile as two programs.***
+This is the first version, so there are bound to be mistakes. **If there is only 1 .cpp file in a directory, it'll compile as two programs.**
 
 amp does **not** compile recursively.
 
