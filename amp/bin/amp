@@ -1,12 +1,12 @@
 #!/bin/sh
-if [ $1 -z ]
+if [ -z "$1" ]
 then
   printf "AMP: HELP\namp [ -i ] install\n           package name\n"
 elif [[ "$1" == "-i" ]]
 then
-  if [ $2 = "gh" ]
+  if [[ $2 == "gh" ]]
   then
-    if [ $(basename $PWD) = "bin" ]; then echo "Please do not use amp in this directory."; exit 1; fi
+    if [[ "$(basename $PWD)" == "bin" ]]; then echo "Please do not use amp in this directory."; exit 1; fi
     GUSER=$3
     GREPO=$4
     GBRAN=$5
@@ -15,7 +15,7 @@ then
     unzip $GREPO-$GBRAN.zip
     cd $GREPO-$GBRAN
     printf "\033[0;32m== \033[1;37mSearching for .cpp files... (GNU G++ Required)\033[0m"
-    if [ $(find *.cpp) -z ]; then
+    if [[ -z "$(find *.cpp)" ]]; then
       printf "\033[0;31m== \033[1;37mNo .cpp files found.\033[0m\n"
     else
       for file in "$(ls *.cpp)"; do
