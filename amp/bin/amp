@@ -12,7 +12,7 @@ then
     GREPO=$4
     GBRAN=$5
     # https://github.com/U/R/archive/refs/heads/B.zip
-    curl -L -o $GREPO-$GBRAN.zip https://github.com/$GUSER/$GREPO/archive/refs/heads/$GBRAN.zip
+    curl -# -Lo $GREPO-$GBRAN.zip https://github.com/$GUSER/$GREPO/archive/refs/heads/$GBRAN.zip
     unzip $GREPO-$GBRAN.zip
     cd $GREPO-$GBRAN
     printf "\033[0;32m== \033[1;37mSearching for .cpp files... (GNU G++ Required)\033[0m\n"
