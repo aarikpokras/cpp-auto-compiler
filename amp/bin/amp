@@ -2,6 +2,7 @@
 if [ -z "$1" ]
 then
   printf "AMP: HELP\namp [ -i ] install\n           package name\n"
+elif [[ "$1" == "-i" ]] && [ -z "$2" ]; then printf "\e[1;31m No repository, user, or branch specified."
 elif [[ "$1" == "-i" ]]
 then
   if [[ $2 == "gh" ]]
