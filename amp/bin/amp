@@ -2,7 +2,7 @@
 if [ $1 -z ]
 then
   printf "AMP: HELP\namp [ -i ] install\n           package name\n"
-elif [ $1 = "-i" ]
+elif [[ "$1" == "-i" ]]
 then
   if [ $2 = "gh" ]
   then
