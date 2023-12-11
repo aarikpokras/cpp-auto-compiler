@@ -23,7 +23,7 @@ then
         printf "\e[0;32m== \e[1;37mCompiling $file into $file-amp...\n"
         g++ -o $file-amp $file
       done
-      printf "\e[1;37m  Done\x21"
+      printf "\e[1;37m   Done\x21\n"
       case "$?" in
         0)
           printf "\033[0;32m== \033[1;37m Build Successful!\033[0m\n"
