@@ -15,6 +15,16 @@ then
     unzip $GREPO-$GBRAN.zip
     cd $GREPO-$GBRAN
     printf "\033[0;32m== \033[1;37mSearching for .cpp files... (GNU G++ Required)\033[0m"
-    if [ $(find *.cpp) -z ]; then printf "\033[0;31m== \033[1;37mNo .cpp files found. Stop.\033[0m\n"; else printf "\033[1;31mCaution: \033[1;37mAssuming there are just two .cpp files.\033[0m\n"; g++ -o main $(find *.cpp | head -n 1); g++ -o main1 $(find *.cpp | head -n 2 | tail -n 1);echo "Wait 2s"; sleep 2; printf "\033[0;32m== \033[1;37m Build Successful!\033[0m\n"; fi
+    if [ $(find *.cpp) -z ]; then
+      printf "\033[0;31m== \033[1;37mNo .cpp files found.\033[0m\n"
+    else
+      #printf "\033[1;31mCaution: \033[1;37mAssuming there are just two .cpp files.\033[0m\n"
+      for file in "$(ls *.cpp)"; do
+        g++ -o $file-amp $file
+      done
+      #g++ -o main $(find *.cpp | head -n 1)
+      #g++ -o main1 $(find *.cpp | head -n 2 | tail -n 1)
+      echo "Wait 2s"; sleep 2; printf "\033[0;32m== \033[1;37m Build Successful!\033[0m\n"
+    fi
     fi
 fi
