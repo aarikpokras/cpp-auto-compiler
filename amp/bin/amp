@@ -26,7 +26,7 @@ then
       printf "\e[1;37m   Done\x21\n"
       case "$?" in
         0)
-          printf "\033[0;32m== \033[1;37m Build Successful!\033[0m\n"
+          printf "\033[0;32m== \033[1;37mBuild Successful!\033[0m\n"
           ;;
         *)
           printf "\e[1;31mError in compiling. Exiting.\e[0m\n"
