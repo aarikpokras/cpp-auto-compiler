@@ -16,7 +16,7 @@ then
     unzip $GREPO-$GBRAN.zip
     cd $GREPO-$GBRAN
     printf "\033[0;32m== \033[1;37mSearching for .cpp files... (GNU G++ Required)\033[0m\n"
-    if [[ -z "$(find *.cpp)" ]]; then
+    if [[ -z "$(find *.cpp) 2> /dev/null" ]]; then
       printf "\033[0;31m== \033[1;37mNo .cpp files found.\033[0m\n"
     else
       for file in "$(ls *.cpp)"; do
