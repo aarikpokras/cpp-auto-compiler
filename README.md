@@ -5,13 +5,13 @@ Uses a shell script and G++ to automatically build programs from GitHub.
 ## Usage
 `cd` into the directory in which you have stored amp.
 
-Give chmod 755 permissions to `bin/amp`.
+Give chmod 755 permissions to amp.sh.
 
 ```console
 cd /path/to/amp
 ```
 ```console
-chmod 755 bin/amp
+chmod 755 amp.sh
 ```
 ### Optional
 You might want to make the `amp` folder hidden.
@@ -19,16 +19,9 @@ You might want to make the `amp` folder hidden.
 mv amp .amp
 ```
 ## Syntax
-Executable name in the directory `amp`: `bin/amp`
 
-`bin/amp`: help list
+`./amp.sh`: help list
 
-`bin/amp -i gh USER REPO BRANCH`
+`./amp.sh -i gh USER REPO BRANCH`
 
 Sorry about the lengthy args.
-## Warning
-This is the first version, so there are bound to be mistakes. **If there is only 1 .cpp file in a directory, it'll compile as two programs.**
-
-amp does **not** compile recursively.
-
-I put an example in the "amp" folder.
