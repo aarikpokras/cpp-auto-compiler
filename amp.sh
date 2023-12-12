@@ -16,20 +16,20 @@ then
     unzip $GREPO-$GBRAN.zip
     cd $GREPO-$GBRAN
     printf "\033[0;32m== \033[1;37mSearching for .cpp files... (GNU G++ Required)\033[0m\n"
-    if [[ -z "$(find *.cpp) 2> /dev/null" ]]; then
+    if [ "$(find *.cpp >& /dev/null;echo $?)" -ne 0 ]; then
       printf "\033[0;31m== \033[1;37mNo .cpp files found.\033[0m\n"
+      exit 1
     else
       for file in "$(ls *.cpp)"; do
         printf "\e[0;32m== \e[1;37mCompiling $file into $file-amp...\n"
         g++ -o $file-amp $file
       done
-      printf "\e[1;37m   Done\x21\n"
       case "$?" in
         0)
           printf "\033[0;32m== \033[1;37mBuild Successful!\033[0m\n"
           ;;
         *)
-          printf "\e[1;31mError in compiling. Exiting.\e[0m\n"
+          printf "   \e[1;31mError in compiling. Exiting.\e[0m\n"
           exit 563
           ;;
       esac
